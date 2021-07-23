@@ -17,7 +17,7 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          command: yarn test
+          command: yarn run test
           name: Running client tests
       - run:
           command: cd ../
