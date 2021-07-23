@@ -7,22 +7,26 @@ jobs:
     executor:
       name: node/default
     steps:
-      - checkout:
-          path: ./client
+      - checkout
       - run:
-          command: cd client/
-          name: Changing directory to client folder
+          command: yarn --cwd ./client/ install
+          name: Installing client packages
       - run:
-          command: yarn --ignore-engines
-          name: Ignoring engine versions
-      - node/install-packages:
-          pkg-manager: yarn
-      - run:
-          command: yarn run test-client
+          command: yarn --cwd ./client/ run test
           name: Running client tests
+          
+  test-server:
+    executor:
+      name: node/default
+    steps:
+      - checkout
       - run:
-          command: cd ../
-          name: Changing back to root dir
+          command: npm --prefix ./server/ install
+          name: Installing server
+      - run:
+          command: npm --prefix ./server/ run test
+          name: Running server tests
+
 workflows:
   Tests:
     jobs:
