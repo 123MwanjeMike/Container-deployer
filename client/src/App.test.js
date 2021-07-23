@@ -8,12 +8,6 @@ test('Welcomes users', () => {
   expect(welcomeText).toBeInTheDocument();
 });
 
-test('Has url input', () => {
-  render(<App />);
-  const input = screen.getByRole('input');
-  expect(input).toBeInTheDocument();
-});
-
 test('Captures the image url', () => {
   render(<App />);
   const linkElement = screen.getByText(/Continue/i);
