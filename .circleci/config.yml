@@ -12,8 +12,9 @@ jobs:
           command: yarn --ignore-engines
           name: Ignore engine versions
       - run:
-          command: yarn --cwd ./client/ install --frozen-lockfile
+          command: yarn --cwd ./client/ install
           name: Installing client packages
+      - run: yarn --cwd ./client/ add -D react-scripts
       - run:
           command: yarn --cwd ./client/ run test
           name: Running client tests
