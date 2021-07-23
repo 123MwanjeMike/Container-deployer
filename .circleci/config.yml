@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: yarn --ignore-engines
+          command: yarn --cwd ./client/ --ignore-engines
           name: Ignore engine versions
       - run:
           command: yarn --cwd ./client/ install
