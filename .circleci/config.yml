@@ -1,0 +1,23 @@
+jobs:
+  test-client:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          command: yarn --ignore-engines
+          name: Ignoring engine versions
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: yarn test
+          name: Running client tests
+workflows:
+  Tests:
+    jobs:
+      run:
+        command: cd client/
+        name: Changing directory to client folder
+      - test-client:
+          name: Client test job
+          version: '15.1'
