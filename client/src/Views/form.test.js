@@ -1,9 +1,15 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Form from './form';
 
-test('Has url input', () => {
+test('Text input accepts text entry', () => {
   render(<Form />);
-  const input = screen.getByRole('urlInput');
-  expect(input).toBeInTheDocument();
+  document.getElementById('imageURI').value = 'https://my.docker.image.url.com';
+  const urlValue = screen.getByDisplayValue('https://my.docker.image.url.com');
+  expect(urlValue).toBeInTheDocument();
+});
+
+test('Submit button is clickable', () => {
+  fireEvent.click(screen.getByText(/Submit/i));
+  expect(handleClick).toHaveBeenCalledTimes(1);
 });
