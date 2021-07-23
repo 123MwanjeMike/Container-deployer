@@ -7,10 +7,10 @@ jobs:
     executor:
       name: node/default
     steps:
+      - checkout
       - run:
           command: cd client/
           name: Changing directory to client folder
-      - checkout
       - run:
           command: yarn --ignore-engines
           name: Ignoring engine versions
@@ -19,6 +19,9 @@ jobs:
       - run:
           command: yarn test
           name: Running client tests
+      - run:
+          command: cd ../
+          name: Changing back to root dir
 workflows:
   Tests:
     jobs:
