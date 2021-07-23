@@ -7,7 +7,7 @@ export default function Index() {
     <header className='App-header'>
       <p>Enter URI of your docker image</p>
       <form onSubmit={handleSubmit}>
-        <input type='type' />
+        <input type='type' role="urlInput" />
         <input type='submit' value='Submit' />
       </form>
       <a className='App-link' href='/' rel='noopener noreferrer'>
