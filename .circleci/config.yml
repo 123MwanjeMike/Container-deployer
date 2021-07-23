@@ -12,7 +12,7 @@ jobs:
           command: yarn --ignore-engines
           name: Ignore engine versions
       - run:
-          command: yarn --cwd ./client/ install
+          command: yarn --cwd ./client/ install --frozen-lockfile
           name: Installing client packages
       - run:
           command: yarn --cwd ./client/ run test
