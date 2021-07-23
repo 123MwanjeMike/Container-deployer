@@ -10,11 +10,7 @@ jobs:
       - checkout
       - run:
           command: yarn --cwd ./client/ --ignore-engines
-          name: Ignore engine versions
-      - run:
-          command: yarn --cwd ./client/ install
-          name: Installing client packages
-      - run: yarn --cwd ./client/ add -D react-scripts
+          name: Installing client packages & while ignoring node engines
       - run:
           command: yarn --cwd ./client/ run test
           name: Running client tests
