@@ -1,12 +1,7 @@
-version: 2.1
-
-orbs:
-  node: circleci/node@4.1
-
 jobs:
   test-client:
-    docker:
-      - image: cimg/node:15.1
+    executor:
+      name: node/default
     steps:
       - checkout
       - run:
@@ -17,12 +12,12 @@ jobs:
       - run:
           command: yarn test
           name: Running client tests
-          
 workflows:
   Tests:
     jobs:
-      run:
+      - run:
         command: cd client/
         name: Changing directory to client folder
       - test-client:
           name: Client test job
+          version: '15.1'
