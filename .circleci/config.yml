@@ -3,6 +3,9 @@ jobs:
     executor:
       name: node/default
     steps:
+      - run:
+        command: cd client/
+        name: Changing directory to client folder
       - checkout
       - run:
           command: yarn --ignore-engines
@@ -15,9 +18,6 @@ jobs:
 workflows:
   Tests:
     jobs:
-      - run:
-        command: cd client/
-        name: Changing directory to client folder
       - test-client:
           name: Client test job
           version: '15.1'
