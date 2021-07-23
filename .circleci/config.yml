@@ -1,15 +1,15 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
-  
+
 jobs:
   test-client:
     executor:
       name: node/default
     steps:
       - run:
-        command: cd client/
-        name: Changing directory to client folder
+          command: cd client/
+          name: Changing directory to client folder
       - checkout
       - run:
           command: yarn --ignore-engines
