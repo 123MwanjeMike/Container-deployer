@@ -1,7 +1,7 @@
 jobs:
   test-client:
-    executor:
-      name: node/default
+    docker:
+      - image: cimg/node:15.1
     steps:
       - run:
         command: cd client/
@@ -20,4 +20,3 @@ workflows:
     jobs:
       - test-client:
           name: Client test job
-          version: '15.1'
