@@ -8,8 +8,3 @@ test('Text input accepts text entry', () => {
   const urlValue = screen.getByDisplayValue('https://my.docker.image.url.com');
   expect(urlValue).toBeInTheDocument();
 });
-
-test('Submit button is clickable', () => {
-  fireEvent.click(screen.getByText(/Submit/i));
-  expect(handleClick).toHaveBeenCalledTimes(1);
-});
