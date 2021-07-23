@@ -21,13 +21,10 @@ jobs:
     steps:
       - checkout
       - run:
-          command: npm --ignore-engines
+          command: yarn --cwd ./server/ --ignore-engines
           name: Ignore engine versions
       - run:
-          command: npm --prefix ./server/ install
-          name: Installing server
-      - run:
-          command: npm --prefix ./server/ run test
+          command: yarn --cwd ./server/ run test
           name: Running server tests
 
 workflows:
