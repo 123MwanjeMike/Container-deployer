@@ -9,6 +9,9 @@ jobs:
     steps:
       - checkout
       - run:
+          command: cd client/
+          name: Changing directory to client folder
+      - run:
           command: yarn --ignore-engines
           name: Ignoring engine versions
       - node/install-packages:
@@ -16,6 +19,9 @@ jobs:
       - run:
           command: yarn run test-client
           name: Running client tests
+      - run:
+          command: cd ../
+          name: Changing back to root dir
 workflows:
   Tests:
     jobs:
