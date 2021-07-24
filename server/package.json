@@ -37,6 +37,7 @@
     "pretty-quick": "^3.1.1"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
