@@ -1,0 +1,34 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+
+jobs:
+  test-client:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          command: yarn --cwd ./client/ --ignore-engines
+          name: Installing client packages & while ignoring node engines
+      - run:
+          command: yarn --cwd ./client/ run test
+          name: Running client tests
+          
+  test-server:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          command: yarn --cwd ./server/ --ignore-engines
+          name: Ignore engine versions
+      - run:
+          command: yarn --cwd ./server/ run test
+          name: Running server tests
+
+workflows:
+  Tests:
+    jobs:
+      - test-client:
+          name: Client test job
