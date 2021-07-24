@@ -46,7 +46,8 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "/src/",
-      "/.circleci/"
+      "/.circleci/",
+      "/client/"
     ],
     "testMatch": [
       "**/tests/**/*.test.js"
