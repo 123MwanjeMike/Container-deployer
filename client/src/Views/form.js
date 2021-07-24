@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import * as fetchFunctions from '../API';
 
 export default function Index() {
   const [imageURI, setImageURI] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dispatch(userActions.logIn({ imageURI }));
+    fetchFunctions.postData({ imageURI });
   };
 
   return (

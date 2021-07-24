@@ -1,4 +1,7 @@
-export const postData = async (url = '', data) => {
+export const postData = async (
+  url = `${process.env.REACT_APP_SERVER_URL}`,
+  data,
+) => {
   const controller = new AbortController();
   const signal = controller.signal;
   try {

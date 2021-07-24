@@ -4,14 +4,23 @@ beforeEach(() => {
   fetch.resetMocks();
 });
 
-test('api returns right result on success', async () => {
+test('Checks for the post data', async () => {
   fetch.mockResponseOnce(JSON.stringify('success'));
-  const response = await fetchFunctions.postData();
+  expect(await fetchFunctions.postData()).toBe('Post data is required');
+});
+
+test('post returns right result on success', async () => {
+  fetch.mockResponseOnce(JSON.stringify('success'));
+  const response = await fetchFunctions.postData({
+    imageURI: 'https://my.container.com',
+  });
   expect(response.response).toBe('success');
 });
 
-test('api returns error result on fail', async () => {
+test('post returns error result on fail', async () => {
   fetch.mockReject(() => Promise.reject('Something went wrong'));
-  const response = await fetchFunctions.postData();
+  const response = await fetchFunctions.postData({
+    imageURI: 'https://my.container.com',
+  });
   expect(response.error).toBe('Something went wrong');
 });
