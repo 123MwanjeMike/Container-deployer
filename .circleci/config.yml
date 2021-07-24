@@ -21,14 +21,16 @@ jobs:
     steps:
       - checkout
       - run:
-          command: yarn --cwd ./server/ --ignore-engines
+          command: yarn --ignore-engines
           name: Ignore engine versions
       - run:
-          command: yarn --cwd ./server/ run test
+          command: yarn run test
           name: Running server tests
 
 workflows:
   Tests:
     jobs:
+      - test-server:
+          name: Client job
       - test-client:
-          name: Client test job
+          name: Server job
