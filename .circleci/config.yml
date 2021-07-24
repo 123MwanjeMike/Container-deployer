@@ -31,6 +31,6 @@ workflows:
   Tests:
     jobs:
       - test-server:
-          name: Client job
+          name: Testing server
       - test-client:
-          name: Server job
+          name: Testing client
