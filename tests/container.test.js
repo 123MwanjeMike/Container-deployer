@@ -1,16 +1,14 @@
-/* eslint-disable no-undef */
-//
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../server';
 
 chai.use(chaiHttp);
 
-describe('deploy tests', () => {
-  it('deploy image successfull', (done) => {
+describe('container tests', () => {
+  it('deploy container successfull', (done) => {
     chai
       .request(app)
-      .post('/deploy/')
+      .post('/container/deploy/')
       .send({
         imageURI: 'https://my.container.uri',
       })
@@ -20,10 +18,10 @@ describe('deploy tests', () => {
       });
   });
 
-  it('deploy image failure', (done) => {
+  it('deploy container failure', (done) => {
     chai
       .request(app)
-      .post('/deploy/')
+      .post('/container/deploy/')
       .send({
         imageURI: '',
       })
