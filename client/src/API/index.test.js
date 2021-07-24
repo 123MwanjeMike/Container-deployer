@@ -6,7 +6,8 @@ beforeEach(() => {
 
 test('Checks for the post data', async () => {
   fetch.mockResponseOnce(JSON.stringify('success'));
-  expect(await fetchFunctions.postData()).toBe('Post data is required');
+  const response = await fetchFunctions.postData()
+  expect(response.error).toBe('Post data is required');
 });
 
 test('post returns right result on success', async () => {

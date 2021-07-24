@@ -1,7 +1,8 @@
 export const postData = async (
-  url = `${process.env.REACT_APP_SERVER_URL}`,
   data,
+  url = `${process.env.REACT_APP_SERVER_URL}`,
 ) => {
+  if (!data) return { error: 'Post data is required', success: false };
   const controller = new AbortController();
   const signal = controller.signal;
   try {
