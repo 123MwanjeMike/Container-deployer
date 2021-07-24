@@ -4,8 +4,14 @@ beforeEach(() => {
   fetch.resetMocks();
 });
 
-test('api returns right result', async () => {
-  fetch.mockResponseOnce(JSON.stringify({ message: 'success' }));
-  const request = await fetchFunctions.postData();
-  expect(request.response.message).toBe('success');
+test('api returns right result on success', async () => {
+  fetch.mockResponseOnce(JSON.stringify('success'));
+  const response = await fetchFunctions.postData();
+  expect(response.response).toBe('success');
+});
+
+test('api returns error result on fail', async () => {
+  fetch.mockReject(() => Promise.reject('Something went wrong'));
+  const response = await fetchFunctions.postData();
+  expect(response.error).toBe('Something went wrong');
 });
