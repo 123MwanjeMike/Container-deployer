@@ -3,6 +3,7 @@ The is a utility that takes a container image and deploys it to a container orch
 
 ## Access
 - The application interface is at [this link](https://deployer-b88d2.web.app/)
+- The application server is hosted at [this link](https://container-deployer.herokuapp.com/)
 
 ### Local setup and access
 #### Setup
