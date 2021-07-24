@@ -1,21 +1,11 @@
-export let controller;
-let signal;
-
-export const postData = async (url = '', data, authToken) => {
-  controller = new AbortController();
-  signal = controller.signal;
+export const postData = async (url = '', data) => {
+  const controller = new AbortController();
+  const signal = controller.signal;
   try {
-    let postObject;
-    let fetchHeaders = {};
-
-    postObject = JSON.stringify(data);
-    fetchHeaders = {
+    const postObject = JSON.stringify(data);
+    const fetchHeaders = {
       'Content-Type': 'application/json',
     };
-
-    if (authToken) {
-      fetchHeaders.Authorization = `Bearer ${authToken}`;
-    }
 
     let response = await fetch(url, {
       method: 'POST',
