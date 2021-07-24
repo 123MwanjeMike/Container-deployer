@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <header className='App-header'>
       <p>Enter URI of your docker image</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <input
           type='text'
           id='imageURI'
