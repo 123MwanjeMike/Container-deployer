@@ -6,7 +6,10 @@ export default function Index() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchFunctions.postData({ imageURI });
+    fetchFunctions.postData(
+      { imageURI },
+      `${process.env.REACT_APP_SERVER_URL}/container/deploy`,
+    );
   };
 
   return (
