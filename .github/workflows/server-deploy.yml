@@ -24,5 +24,5 @@ jobs:
           # The Heroku branch name that you would like to deploy to (`master` or `main`).
           heroku_branch: 'main'
           # The subfolder where your built code is sitted, e.g. `dist`.
-          subfolder: '../server'
+          subfolder: './server'
         
