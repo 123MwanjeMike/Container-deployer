@@ -1,6 +1,6 @@
 export const postData = async (
   data,
-  url = `${process.env.REACT_APP_SERVER_URL}`,
+  url = `${process.env.response}`,
 ) => {
   if (!data) return { error: 'Post data is required', success: false };
   const controller = new AbortController();
