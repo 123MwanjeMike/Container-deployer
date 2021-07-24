@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/123MwanjeMike/deployment-utility.git"
   },
+  "engines": {
+    "yarn": "1.x"
+  },
   "keywords": [
     "deployment",
     "utility",
