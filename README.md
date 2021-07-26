@@ -7,14 +7,17 @@ The is a utility that takes a container image and deploys it to a container orch
 - The application interface is at [this link](https://deployer-b88d2.web.app/)
 - The application server is hosted at [this link](https://container-deployer.herokuapp.com/)
 
-### Local setup and access
+### Local setup and usage
 #### Setup
 1. Clone the repository with 
   `git clone https://github.com/123MwanjeMike/deployment-utility.git`
 2. While at the root directory run `yarn --cwd ./client/ install` to install the client dependencies
 3. While still at the root directory run `yarn --cwd ./server/ install` to install the server dependencies
-4. Run `yarn --cwd ./client/ start` to start the client application and `yarn --cwd ./server/ start` to start the server
-5. You can now access the application interface at localhost:3000
+#### Usage
+1. Run `yarn --cwd ./client/ start` to start the client
+2. Run `yarn --cwd ./server/ start` to start the server
+3. Access address http://127.0.0.1:3000/ or http://localhost:3000/ in your web browser<br/>
+4. Voila
 
 ## Asumptions
 - The user entered url is a correct container image uri.
