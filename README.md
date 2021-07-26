@@ -32,5 +32,5 @@ Next, the backend application will;
 - [ ] Check to confirm container is a docker image
 - [ ] Build the docker container
 - [ ] Publish the docker image
-- [ ] Deploy it with kubectl
+- [ ] Deploy ithe image
   
