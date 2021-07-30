@@ -21,8 +21,11 @@ export default function Index() {
 
   return (
     <header className='App-header'>
-      {component === 'Welcome' ? <Welcome /> : <Form />}
-      <button onClick={clickFunction}>{buttonText}</button>
+      {component === 'Welcome' ? <Welcome /> : null}
+      {component === 'Form' ? <Form /> : null}
+      <button onClick={clickFunction} >
+        {buttonText}
+      </button>
     </header>
   );
 }
