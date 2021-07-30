@@ -1,14 +1,12 @@
 import * as appTypes from '../types';
 import * as fetchFunctions from '../../api/index';
-import appEndpoints from '../endpoints/app';
+import appEndpoints from '../endpoints';
 
-export const continueClick = () => async (dispatch) => {
+export const continueClick = () => async (dispatch) =>
   dispatch({ type: appTypes.APP_FORM });
-};
 
-export const backClick = () => async (dispatch) => {
+export const backClick = () => async (dispatch) =>
   dispatch({ type: appTypes.APP_INDEX });
-};
 
 export const deployContainer = (payload) => async (dispatch) => {
   dispatch({
