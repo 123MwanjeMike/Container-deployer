@@ -1,4 +1,5 @@
-[![123MwanjeMike](https://circleci.com/gh/123MwanjeMike/deployment-utility.svg?style=svg)](https://app.circleci.com/pipelines/github/123MwanjeMike/deployment-utility)
+[![123MwanjeMike](https://circleci.com/gh/123MwanjeMike/deployment-utility.svg?style=shield)](https://app.circleci.com/pipelines/github/123MwanjeMike/deployment-utility) 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/327795a5-819b-44ad-8c00-cd7eaf52584a/deploy-status)](https://app.netlify.com/sites/naughty-wozniak-83568f/deploys)
 
 # deployment-utility
 The is a utility that takes a container image and deploys it to a container orchestration platform.
@@ -27,7 +28,6 @@ The is a utility that takes a container image and deploys it to a container orch
 ## Technical decisions
 - The application will only deploy docker containers
 - The container will be deployed to kubernetes
-- The client and server are both managed differently by the yarn package manager to support seperate and independent development of each.
 
 ## Approach and next steps
 The user enters their container url at the client interfacing application, that sends it to the backend.
