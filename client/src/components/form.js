@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import * as fetchFunctions from '../API';
+import * as fetchFunctions from '../api';
 
-export default function Index() {
+export default function Form() {
   const [imageURI, setImageURI] = useState('');
 
   const handleSubmit = (e) => {
@@ -13,7 +13,7 @@ export default function Index() {
   };
 
   return (
-    <header className='App-header'>
+    <>
       <p>Enter URI of your docker image</p>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input
@@ -24,9 +24,6 @@ export default function Index() {
         />
         <button type='submit'>Submit</button>
       </form>
-      <a className='App-link' href='/' rel='noopener noreferrer'>
-        Back
-      </a>
-    </header>
+    </>
   );
 }
