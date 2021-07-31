@@ -14,7 +14,7 @@ export const deployContainer = (payload) => async (dispatch) => {
   });
 
   const result = await fetchFunctions.postData(
-    appEndpoints.deploy_container,
+    `${appEndpoints.deploy_container}/container/deploy`,
     payload,
   );
 
