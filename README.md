@@ -21,8 +21,7 @@ The is a utility that takes a container image and deploys it to a container orch
 4. Voila
 
 ## Asumptions
-- The user entered url is a correct container image uri.
-- The container container is in healthy state.
+- The container image is in healthy state.
 - The container in use is a docker container.
 
 ## Technical decisions
